@@ -68,6 +68,10 @@ body {
     padding: 1.3rem .3rem;
 }
 
+.demo-content .demo-title span {
+    margin-left: -.5rem;
+}
+
 .demo-content .demo-title span:nth-child(1) {
     width: 8%;
 }
@@ -105,12 +109,12 @@ body {
     font-weight: 300;
 }
 
-.demo-content .list_block .download-btn {
+.demo-content .list_block .download_btn {
     display: flex;
     padding-right: 1.9rem;
 }
 
-.demo-content .list_block .download-btn:hover {
+.demo-content .list_block .download_btn:hover {
     opacity: .7;
 }
 
@@ -165,7 +169,7 @@ body {
     display: inline-block;
     height: 40px;
     width: 3px;
-    margin: 0 5px;
+    margin: 0 1px;
     list-style: none;
     background-color: hsl(6, 73%, 68%);
     transform-origin: bottom;
