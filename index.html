@@ -8,18 +8,16 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="wrapper">
-        <div class="container-demo">
-            <header>
-                <h1>Playlist</h1>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit maxime, dignissimos voluptates accusantium eos culpa.</p>
-                <nav>
-                    <ul class="left">
+    <div class="demo-wrapper section">
+        <div class="demo-container">
+            <div class="demo-header">
+                <div class="demo-nav">
+                    <ul class="demo-left">
                         <li><a href="#">New Releases</a></li>
                         <li><a href="#">Most played songs</a></li>
                         <li><a href="#">Albums</a></li>
                     </ul>
-                    <ul class="right">
+                    <ul class="demo-right">
                         <li><a href="#">About</a></li>
                         <li><a href="#">The band</a></li>
                         <li><a href="#">Contact</a></li>
@@ -33,11 +31,11 @@
                             </a>
                         </li>
                     </ul>
-                </nav>
-            </header>
+                </div>
+            </div>
 
-            <div class="body-content">
-                <div class="title">
+            <div class="demo-content">
+                <div class="demo-title">
                     <span></span>
                     <span>Title</span>
                     <span>Artist</span>
@@ -46,15 +44,38 @@
                     <span></span>
                     <span></span>
                 </div>
-                <div class="list">
+                <div class="demo-list">
 
                 </div>
             </div>
         </div>
     </div>
 
+    
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="script.js"></script>
+    <script>
+        $(document).ready(function(){
+
+            var list = $(".demo-list");
+            var list_block;
+
+            for (var key in song_list){
+                list_block = $('<div class="list_block"></div>');
+                list.append(list_block);
+
+                list_block.append('<span class="play-btn"><img class="play-icon" src="./svg/play.svg" alt="" class="play-icon"><img class="pause-icon" src="./svg/pause.svg" alt="" class="play-icon"></span>')
+                list_block.append('<span class="song_title">' + song_list[key].title + '</span>');
+                list_block.append('<span class="song_artist">' + song_list[key].artist + '</span>');
+                list_block.append('<span class="song_genre">' + song_list[key].genre + '</span>');
+                list_block.append('<span class="song_duration">' + song_list[key].duration + '</span>');
+                list_block.append('<span class="beat_animation"><ul><li></li><li></li><li></li><li></li><li></li></ul></span>');
+                list_block.append('<span class="track"><audio id="audio" controls><source src="./songs/'+ song_list[key].track +'" type="audio/mp3"></audio></span>');
+                list_block.append('<span class="download-btn"><a target="_blank" href="./songs/'+ song_list[key].track +'"><img src="./svg/download.svg"></a></span>');
+            }
+        });
+    </script>
+
 </body>
 </html>
