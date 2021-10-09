@@ -14,12 +14,7 @@ body {
 }
 
 .section {
-    padding: 3rem 0;
-}
-
-
-.demo-section {
-    
+    padding: 3rem 3rem;
 }
 
 .demo-container {
@@ -69,7 +64,7 @@ body {
 .demo-content .demo-title {
     display: flex;
     border-radius: 10px;
-    color: hsl(222, 14%, 18%);
+    color: hsl(70, 5%, 22%);
     padding: 1.3rem .3rem;
 }
 
@@ -171,8 +166,41 @@ body {
     height: 40px;
     width: 3px;
     margin: 0 5px;
-    transform-origin: bottom;
-    animation: beat 1s linear 0s infinite;
     list-style: none;
+    background-color: hsl(6, 73%, 68%);
+    transform-origin: bottom;
+    animation: beat 900ms linear 0s infinite;
+    animation-play-state: paused;
+}
+
+
+@keyframes beat {
+    50% {
+        transform: scaleY(0);
+    }
+}
+
+.beat_animation ul li:nth-child(1) {
+    animation-delay: .1s;
+}
+
+.beat_animation ul li:nth-child(2) {
+    animation-delay: .3s;
+}
+
+.beat_animation ul li:nth-child(3) {
+    animation-delay: .2s;
+}
+
+.beat_animation ul li:nth-child(4) {
+    animation-delay: .4s;
+}
+
+.beat_animation ul li:nth-child(5) {
+    animation-delay: .5s;
+}
+
+.beat_animation ul li:nth-child(6) {
+    animation-delay: .4s;
 }
 

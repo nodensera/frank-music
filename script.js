@@ -1,4 +1,4 @@
-const song_list = {
+let song_list = {
     "01": {
         title: "Volta comigo bb",
         artist: "Frank",
